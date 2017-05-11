@@ -1,0 +1,70 @@
+#Objetivo: filtrar a produção de laranja por município
+
+library(tidyverse)
+library(readxl)
+library(zoo)
+
+tabela2015 <- readxl::read_excel("Tab16_Sao Paulo 2015.xls",skip = 5)
+tabela2005 <- readxl::read_excel("Tab16_Sao Paulo 2005.xls",skip = 5)
+
+########
+# 2015 #
+########
+
+tabela2015 <- tabela2015 %>% 
+  select(municipio, quantidade) %>% 
+  filter(!municipio %in% c("Lavouras Temporárias","Lavouras Permanentes"))
+
+filtro1 <- tabela2015 %>% filter(quantidade == "...")
+
+filtro1<- filtro1 %>% mutate(localidade = municipio)
+
+filtro1$quantidade <- NULL
+
+tabela2015_2 <- left_join(x = tabela2015, y = filtro1, by = "municipio")
+
+municipio2015 <- filtro1$municipio
+
+tabela_2015_3 <- tabela2015_2 %>% filter(municipio %in% c(municipio2015,"Laranja                                         "))
+
+tabela_2015_3 <- tabela_2015_3 %>% 
+  group_by(localidade) %>% 
+  mutate(municipiof = na.locf(localidade))
+
+tabela2015_4 <- tabela_2015_3 %>% filter(municipio == "Laranja                                         ") %>% 
+  select(municipio, quantidade, municipiof)
+tabela2015_4$localidade <- NULL
+
+write.csv2(x = tabela2015_4, file = "tabela2015.csv", sep = ";")
+
+########
+# 2005 #
+########
+
+tabela2005 <- tabela2005 %>% 
+  select(municipio, quantidade) %>% 
+  filter(!municipio %in% c("Lavouras Temporárias","Lavouras Permanentes"))
+
+filtro1 <- tabela2005 %>% filter(quantidade == "...")
+
+filtro1<- filtro1 %>% mutate(localidade = municipio)
+
+filtro1$quantidade <- NULL
+
+tabela2005_2 <- left_join(x = tabela2005, y = filtro1, by = "municipio")
+
+municipio2005 <- filtro1$municipio
+
+tabela_2005_3 <- tabela2005_2 %>% filter(municipio %in% c(municipio2005,"Laranja                                         "))
+
+tabela_2005_3 <- tabela_2005_3 %>% 
+  group_by(localidade) %>% 
+  mutate(municipiof = na.locf(localidade))
+
+tabela2005_4 <- tabela_2005_3 %>% filter(municipio == "Laranja                                         ") %>% 
+  select(municipio, quantidade, municipiof)
+tabela2005_4$localidade <- NULL
+
+write.csv2(x = tabela2005_4, file = "tabela2005.csv", sep = ";")
+
+

@@ -1,2 +1,2 @@
 # work
-Repositórios relacionados com alguns trabalhos no NECI
+Repositório relacionado aos trabalhos no NECI

@@ -1,4 +1,4 @@
-# Calcular o Slope (b)
+# Função para calcular o Slope (b) e o Intercepto (a)
 b <- function(x, y, a = TRUE){
   # Verificar se os pares ordenados contém NA
   ## Verificar se os vetores são do mesmo tamanho

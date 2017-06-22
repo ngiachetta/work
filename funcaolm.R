@@ -45,6 +45,8 @@ b <- function(x, y, a = TRUE){
   # Intercepto (a)
   if (a == TRUE){
     a <- mean_y - (b*mean_x) 
+  }else{
+    a <- NA
   }
   return(list(Intercepto = a, Slope = b))
 }

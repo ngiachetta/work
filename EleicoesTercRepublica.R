@@ -34,7 +34,7 @@ arquivo.detalhe <- "DETALHE_VOTACAO_UF_ANO_UNIDF.txt"
 arquivo.cand <- "VOTACAO_CANDIDATO_UF_ANO_UNIDF.txt"
 
 ### 1945
-setwd('/home/nathang/Dropbox/TercRep/1945')
+setwd()
 uf.partido <- c("AC", "AL", "AM", "BA", "CE", "DF", "ES", "GO", "MA", "MG", "MT", "PA", "PB", "PE", "PI", "PR", "RJ", "RN",
                 "RS", "SC", "SE", "SP")
 uf.detalhe <- uf.partido
@@ -54,7 +54,7 @@ votDeta45 <- purrr::map_df(unlist(arq.ufs.detalhe), read_csv2, col_names = label
 votCand45 <- purrr::map_df(unlist(arq.ufs.cand), read_csv2, col_names = labels.candidato, locale=locale(encoding = "latin1"))
 
 ### 1947
-setwd('/home/nathang/Dropbox/TercRep/1947')
+setwd()
 uf.partido <- c("AL", "AM","AP" ,"BA", "CE", "DF", "ES", "GO","GP", "MA", "MG", "MT", "PA", "PB", "PE", "PI", "PR","RB", "RJ", "RN",
                 "RS", "SC", "SE", "SP")
 uf.detalhe <- uf.partido
@@ -74,7 +74,7 @@ votDeta47 <- purrr::map_df(unlist(arq.ufs.detalhe), read_csv2, col_names = label
 votCand47 <- purrr::map_df(unlist(arq.ufs.cand), read_csv2, col_names = labels.candidato, locale=locale(encoding = "latin1"))
 
 ### 195O
-setwd('/home/nathang/Dropbox/TercRep/1950')
+setwd()
 uf.partido <- c("AC", "AL", "AM", "AP", "BA", "CE", "DF", "ES", "GO","GP", "MA", "MG", "MT", "PA", "PB", "PE", "PI", "PR","PB" ,"RJ", "RN",
                 "RS", "SC", "SE", "SP")
 uf.detalhe <- uf.partido
@@ -94,7 +94,7 @@ votDeta50 <- purrr::map_df(unlist(arq.ufs.detalhe), read_csv2, col_names = label
 votCand50 <- purrr::map_df(unlist(arq.ufs.cand), read_csv2, col_names = labels.candidato, locale=locale(encoding = "latin1"))
 
 ### 1954
-setwd('/home/nathang/Dropbox/TercRep/1954')
+setwd()
 uf.partido <- c("AC", "AL", "AM", "AP", "BA", "CE", "DF", "ES", "GO","GP", "MA", "MG", "MT", "PA", "PB", "PE", "PI", "PR","PB" ,"RJ", "RN",
                 "RS", "SC", "SE", "SP")
 uf.detalhe <- uf.partido
@@ -114,7 +114,7 @@ votDeta54 <- purrr::map_df(unlist(arq.ufs.detalhe), read_csv2, col_names = label
 votCand54 <- purrr::map_df(unlist(arq.ufs.cand), read_csv2, col_names = labels.candidato, locale=locale(encoding = "latin1"))
 
 ### 1958
-setwd('/home/nathang/Dropbox/TercRep/1958')
+setwd()
 uf.partido <- c("AC", "AL", "AM", "AP", "BA", "CE", "DF", "ES", "GO", "MA", "MG", "MT", "PA", "PB", "PE", "PI", "PR","PB","RB" ,"RJ", "RN","RO",
                 "RS", "SC", "SE", "SP")
 uf.detalhe <- uf.partido
@@ -134,7 +134,7 @@ votDeta58 <- purrr::map_df(unlist(arq.ufs.detalhe), read_csv2, col_names = label
 votCand58 <- purrr::map_df(unlist(arq.ufs.cand), read_csv2, col_names = labels.candidato, locale=locale(encoding = "latin1"))
 
 ### 1962
-setwd('/home/nathang/Dropbox/TercRep/1962')
+setwd()
 uf.partido <- c("AC", "AL", "AM", "AP", "BA", "CE", "ES", "GB","GO", "MA", "MG", "MT", "PA", "PB", "PE", "PI", "PR","PB" ,"RJ", "RN","RO",
                 "RS", "SC", "SE", "SP")
 uf.detalhe <- uf.partido

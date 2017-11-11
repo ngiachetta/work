@@ -56,6 +56,9 @@ ObtemDetalhes <- function(link){
 tabela_Det <- tibble() 
 for (i in 1:nrow(tabelaDisciplinas)) {
   tab <- ObtemDetalhes(tabelaDisciplinas$Links[i])
+  if (nrow(tab) == 0){
+    tab[1,] <- NA
+  }
   tabela_Det <- bind_rows(tabela_Det, tab)
 }
 
